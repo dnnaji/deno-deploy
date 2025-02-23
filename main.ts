@@ -23,8 +23,8 @@ app.use(
 );
 
 // Sample route
-app.get("/api/data", async (c: Context) => {
-  const ouput = 'Hello, rate-limited world!' + await kv.get(["rate_limit", "global"]);
+app.get("/api/data", (c: Context) => {
+  const ouput = 'Hello, rate-limited world!';
   return c.text(ouput);
 });
 
