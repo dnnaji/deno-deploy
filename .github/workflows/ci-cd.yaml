@@ -26,5 +26,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: deno-deploy-60  # Replace with your Deno Deploy project name
-          entrypoint: server.ts  # Replace with your entrypoint file
+          entrypoint: main.ts  # Replace with your entrypoint file
         # Deploys to Deno Deploy only on push events
