@@ -1,5 +1,19 @@
 {
   "version": "4",
+  "specifiers": {
+    "npm:hono-rate-limiter@~0.4.2": "0.4.2_hono@4.7.2"
+  },
+  "npm": {
+    "hono-rate-limiter@0.4.2_hono@4.7.2": {
+      "integrity": "sha512-AAtFqgADyrmbDijcRTT/HJfwqfvhalya2Zo+MgfdrMPas3zSMD8SU03cv+ZsYwRU1swv7zgVt0shwN059yzhjw==",
+      "dependencies": [
+        "hono"
+      ]
+    },
+    "hono@4.7.2": {
+      "integrity": "sha512-8V5XxoOF6SI12jkHkzX/6aLBMU5GEF5g387EjVSQipS0DlxWgWGSMeEayY3CRBjtTUQYwLHx9JYouWqKzy2Vng=="
+    }
+  },
   "remote": {
     "https://deno.land/x/hono@v3.7.3/client/client.ts": "ff340f58041203879972dd368b011ed130c66914f789826610869a90603406bf",
     "https://deno.land/x/hono@v3.7.3/client/index.ts": "3ff4cf246f3543f827a85a2c84d66a025ac350ee927613629bda47e854bfb7ba",
@@ -38,5 +52,10 @@
     "https://deno.land/x/hono@v3.7.3/utils/url.ts": "5fc3307ef3cb2e6f34ec2a03e3d7f2126c6a9f5f0eab677222df3f0e40bd7567",
     "https://deno.land/x/hono@v3.7.3/validator/index.ts": "6c986e8b91dcf857ecc8164a506ae8eea8665792a4ff7215471df669c632ae7c",
     "https://deno.land/x/hono@v3.7.3/validator/validator.ts": "97581228af2d9091fb4633a67f018a171e053cf6379b97c7e8dc3fc9feaacc1a"
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:hono-rate-limiter@~0.4.2"
+    ]
   }
 }
