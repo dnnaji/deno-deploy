@@ -1,0 +1,32 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for Deno Deploy authentication
+      contents: read   # Required to access repository contents
+    steps:
+      - uses: actions/checkout@v4
+        # Checks out your repository code
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: 2.x
+        # Sets up Deno in the runner
+      - run: deno test
+        # Runs your Deno tests
+      - name: Deploy to Deno Deploy
+        if: github.event_name == 'push'
+        uses: denoland/deployctl@v1
+        with:
+          project: deno-deploy-60  # Replace with your Deno Deploy project name
+          entrypoint: server.ts  # Replace with your entrypoint file
+        # Deploys to Deno Deploy only on push events
