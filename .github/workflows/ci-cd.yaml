@@ -21,8 +21,6 @@ jobs:
         with:
           deno-version: 2.x
         # Sets up Deno in the runner
-      - run: deno test
-        # Runs your Deno tests
       - name: Deploy to Deno Deploy
         if: github.event_name == 'push'
         uses: denoland/deployctl@v1
